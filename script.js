@@ -1,4 +1,3 @@
-
 document.querySelector('.menu-toggle').addEventListener('click', function() {
   document.querySelector('.sidebar').classList.add('active');
 });
@@ -7,8 +6,7 @@ document.querySelector('.close-menu').addEventListener('click', function() {
   document.querySelector('.sidebar').classList.remove('active');
 });
 
-// Fermer le menu en cliquant en dehors thomas1
-
+// Fermer le menu en cliquant en dehors
 document.addEventListener('click', function(event) {
   const sidebar = document.querySelector('.sidebar');
   const menuToggle = document.querySelector('.menu-toggle');
@@ -29,26 +27,20 @@ function copyPromoCode() {
   });
 }
 
-
-// Fonction pour afficher la promo 1xBet comme notification thomas3
-
-
+// Fonction pour afficher la promo 1xBet comme notification
 function showPromoNotification() {
   const promoContainer = document.querySelector('.promo-1xbet');
   promoContainer.style.display = 'block';
   
   setTimeout(() => {
-    promoContainer.style.display = 'none';
-  }, 3000); 
+    promoContainer.style.display = 'none'; // Masque la notification après 3 secondes
+  }, 3000);
 }
 
-// Afficher la notification immédiatement au chargement de la page thomas3
-showPromoNotification();
+// Afficher la notification 3 secondes après le chargement de la page
+window.addEventListener('load', function() {
+  setTimeout(showPromoNotification, 3000);
+});
 
-
+// Optionnel : Afficher la notification toutes les 10 secondes après la première apparition
 setInterval(showPromoNotification, 10000);
-
-function closePromoNotification() {
-  const promoContainer = document.querySelector('.promo-1xbet');
-  promoContainer.style.display = 'none';
-}
